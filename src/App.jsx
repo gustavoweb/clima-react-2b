@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 import { CloudSunRain, MapPinned } from 'lucide-react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Cadastro from './Cadastro'
 
 function App() {
@@ -92,21 +91,6 @@ function App() {
             </div>
 
           </div> {/* Fecha #card-resultado */}
-
-          <a href="https://raphaeldisanto.com.br/" target='_blank'>RDS</a>
-          
-
-          <Link to="/Cadastro">IR</Link>
-
-          <br/>
-
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Cadastro />} />
-            </Routes>
-          </BrowserRouter>
-
-
 
         </div>
       </div>
