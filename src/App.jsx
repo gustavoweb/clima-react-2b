@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import { CloudSunRain } from 'lucide-react';
+import { CloudSunRain, MapPinned } from 'lucide-react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import Cadastro from './Cadastro'
 
 function App() {
   const [cidade, setCidade] = useState('');
@@ -66,6 +68,45 @@ function App() {
               <button>Buscar</button>
             </div>
           </div>
+
+          {/* Resultado do Clima */}
+          <div id="card-resultado">
+            <div id="cidade-info">
+              <div id="cidade-nome">
+                <MapPinned style={{color: '#550808ff'}} size={48} />
+                Campinas, BR
+              </div>
+              <p id="cidade-desc">
+                Nublado
+              </p>
+            </div> {/* Fecha #cidade-desc*/}
+
+            {/* Temperatura Principal */}
+            <div id="temperatura-box">
+              <div id="temperatura-valor">
+                22ºC
+              </div>
+              <div id="sensacao">
+                Sensação Térmica: 25ºC
+              </div>
+            </div>
+
+          </div> {/* Fecha #card-resultado */}
+
+          <a href="https://raphaeldisanto.com.br/" target='_blank'>RDS</a>
+          
+
+          <Link to="/Cadastro">IR</Link>
+
+          <br/>
+
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Cadastro />} />
+            </Routes>
+          </BrowserRouter>
+
+
 
         </div>
       </div>

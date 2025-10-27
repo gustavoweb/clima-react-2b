@@ -53,3 +53,46 @@ header p{
   border-color: #3b82f6;
   box-shadow: 0 0 0 3px #3b83f65f;
 }
+.busca-container button{
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.busca-container button:hover{
+  background: #2563eb;
+}
+.busca-container button:disabled{
+  cursor: not-allowed;
+  background: #9ca3af;
+}
+#card-resultado{
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px #0000009d;
+  padding: 32px;
+}
+#cidade-info{
+  text-align: center;
+  margin-bottom: 24px;
+}
+#cidade-nome{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+#cidade-desc{
+  color: #4b5563;
+  text-transform: capitalize;
+  font-size: 1.2em;
+}
