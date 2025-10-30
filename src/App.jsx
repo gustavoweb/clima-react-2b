@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import { CloudSunRain, MapPinned } from 'lucide-react';
-import Cadastro from './Cadastro'
+import { CloudSunRain, MapPinned, Thermometer, Droplet, Wind } from 'lucide-react';
+
 
 function App() {
   const [cidade, setCidade] = useState('');
@@ -89,6 +89,29 @@ function App() {
                 Sensação Térmica: 25ºC
               </div>
             </div>
+
+            <div className="detalhes-box">
+
+              <div className="detalhes-item">
+                <Thermometer style={{color: '#3fb2ffff'}} size={32} />
+                <h2>Min/Max</h2>
+                <h3>23ºC / 26ºC</h3>
+              </div>
+
+              <div className="detalhes-item">
+                <Droplet style={{color: '#3fb2ffff'}} size={32} />
+                <h2>Umidade</h2>
+                <h3>10%</h3>
+              </div>
+
+              <div className="detalhes-item">
+                <Wind style={{color: '#3fb2ffff'}} size={32} />
+                <h2>Vento</h2>
+                <h3>15 km/h</h3>
+              </div>
+
+            </div>{/* Fecha detalhes-box */}
+          
 
           </div> {/* Fecha #card-resultado */}
 
