@@ -21,8 +21,8 @@ function App() {
     setErro('');
 
     try{
-      const API_KEY = 'bd5e378503939ddaee76f12ad7a97608';
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid${API_KEY}&units=metric&lang=pt_br`;
+      const API_KEY = "50878f4678cd0841144b44b2fca0ccc0";
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${API_KEY}&units=metric&lang=pt_br`;
       const resposta = await fetch(url);
 
       if(!resposta.ok){
@@ -83,20 +83,20 @@ function App() {
             <div id="cidade-info">
               <div id="cidade-nome">
                 <MapPinned style={{color: '#550808ff'}} size={48} />
-                Campinas, BR
+                {clima.name}, {clima.sys.country}
               </div>
               <p id="cidade-desc">
-                Nublado
+                {clima.weather[0].description}
               </p>
             </div> {/* Fecha #cidade-desc*/}
 
             {/* Temperatura Principal */}
             <div id="temperatura-box">
               <div id="temperatura-valor">
-                22ºC
+                {Math.round(clima.main.temp)}ºC
               </div>
               <div id="sensacao">
-                Sensação Térmica: 25ºC
+                Sensação Térmica: {Math.round(clima.main.feels_like)}ºC
               </div>
             </div>
 
@@ -105,19 +105,21 @@ function App() {
               <div className="detalhes-item">
                 <Thermometer style={{color: '#3fb2ffff'}} size={32} />
                 <h2>Min/Max</h2>
-                <h3>23ºC / 26ºC</h3>
+                <h3>{Math.round(clima.main.temp_min)}ºC
+                     / {Math.round(clima.main.temp_max)}ºC
+                </h3>
               </div>
 
               <div className="detalhes-item">
                 <Droplet style={{color: '#3fb2ffff'}} size={32} />
                 <h2>Umidade</h2>
-                <h3>10%</h3>
+                <h3>{clima.main.humidity}%</h3>
               </div>
 
               <div className="detalhes-item">
                 <Wind style={{color: '#3fb2ffff'}} size={32} />
                 <h2>Vento</h2>
-                <h3>15 km/h</h3>
+                <h3>{Math.round(clima.wind.speed * 3.6)} km/h</h3>
               </div>
 
             </div>{/* Fecha detalhes-box */}
