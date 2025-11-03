@@ -13,7 +13,7 @@ function App() {
   const buscaClima = async () => {
     //validação básica
     if(!cidade.trim()){
-      setErro('Por favor, digite uma cidade');
+      setErro('❗ Por favor, digite uma cidade');
       return;
     }
 
@@ -26,7 +26,7 @@ function App() {
       const resposta = await fetch(url);
 
       if(!resposta.ok){
-        throw new Error('Cidade não encontrada');
+        throw new Error('❗ Cidade não encontrada');
       }
 
       const dados = await resposta.json();
