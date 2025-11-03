@@ -63,11 +63,21 @@ function App() {
               <input 
                 type="text" 
                 placeholder="Digite o nome da cidade.." 
+                value={cidade}
+                onChange={(e) => setCidade(e.target.value)}
+                onKeyPress={handleKeyPress}
               />
-              <button>Buscar</button>
+              <button
+                onClick={buscaClima}
+                disabled={carregando}
+              >
+                {carregando ? "Buscando..." : "Buscar"}
+              </button>
             </div>
+            {erro && <div className="error-message">{erro}</div>}
           </div>
 
+          {clima && (<>
           {/* Resultado do Clima */}
           <div id="card-resultado">
             <div id="cidade-info">
@@ -114,9 +124,11 @@ function App() {
           
 
           </div> {/* Fecha #card-resultado */}
+          </>)}
 
         </div>
       </div>
+          
     </>
   )
 }
